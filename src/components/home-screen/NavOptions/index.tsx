@@ -34,6 +34,7 @@ const NavOptions: React.FC = () => {
       renderItem={({item}) => (
         <TouchableOpacity
           disabled={!origin}
+          activeOpacity={0.5}
           className="p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40"
           onPress={() => navigation.navigate(item.screen)}
         >
