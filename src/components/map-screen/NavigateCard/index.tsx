@@ -26,6 +26,10 @@ const NavigateCard: React.FC = () => {
           fetchDetails={true}
           nearbyPlacesAPI="GooglePlacesSearch"
           debounce={300}
+          predefinedPlaces={[{
+            geometry: {location: {lat: 51.505554, lng: -0.075278}},
+            description: 'London, Tower Bridge'
+          }]}
           query={{
             key: GOOGLE_API_KEY,
             language: 'en'

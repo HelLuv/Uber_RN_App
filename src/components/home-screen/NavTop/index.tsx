@@ -28,7 +28,10 @@ const NavTop: React.FC = () => {
         fetchDetails={true}
         nearbyPlacesAPI="GooglePlacesSearch"
         debounce={300}
-        predefinedPlaces={[{geometry: {location: {lat: 51.503399, lng: -0.119519}}, description: 'London, London Eye'}]}
+        predefinedPlaces={[{
+          geometry: {location: {lat: 51.503399, lng: -0.119519}},
+          description: 'London, London Eye'
+        }]}
         onPress={(data, detail) => {
           dispatch(setOrigin({
             location: detail.geometry.location,

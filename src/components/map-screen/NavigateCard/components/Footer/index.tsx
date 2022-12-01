@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
       <TouchableOpacity
         activeOpacity={0.5}
         className="flex flex-row justify-between bg-black w-24 px-4 py-3 rounded-full"
-        onPress={() => Alert.alert('We are already working on it! Stay tuned 🏂')}
+        onPress={() => Alert.alert('We are already working on it!', 'Stay tuned 🏂')}
       >
         <Icon name="fast-food-outline" type="ionicon" color="white" size={16}/>
         <Text className="text-white text-center">Eats</Text>
