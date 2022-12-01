@@ -10,7 +10,6 @@ import {setDestination, setOrigin} from "../../../store/slices/navSlice";
 const NavTop: React.FC = () => {
   const dispatch = useAppDispatch();
 
-  console.log(GOOGLE_API_KEY)
   return (
     <>
       <Image
@@ -28,7 +27,8 @@ const NavTop: React.FC = () => {
         minLength={2}
         fetchDetails={true}
         nearbyPlacesAPI="GooglePlacesSearch"
-        debounce={400}
+        debounce={300}
+        predefinedPlaces={[{geometry: {location: {lat: 51.503399, lng: -0.119519}}, description: 'London, London Eye'}]}
         onPress={(data, detail) => {
           dispatch(setOrigin({
             location: detail.geometry.location,
