@@ -1,10 +1,14 @@
 import * as React from 'react';
-import {View, Text, Image} from 'react-native';
+import {Image} from 'react-native';
 import {GooglePlacesAutocomplete} from "react-native-google-places-autocomplete";
+import {GOOGLE_API_KEY} from "@env"
+
+import {useAppDispatch} from "../../../store";
+import {setDestination, setOrigin} from "../../../store/slices/navSlice";
 
 
 const NavTop: React.FC = () => {
-
+  const dispatch = useAppDispatch();
   return (
     <>
       <Image
@@ -24,7 +28,11 @@ const NavTop: React.FC = () => {
         nearbyPlacesAPI="GooglePlacesSearch"
         debounce={400}
         onPress={(data, detail) => {
-          console.log({data, detail})
+          dispatch(setOrigin({
+            location: detail.geometry.location,
+            description: data.description,
+          }));
+          dispatch(setDestination(null));
         }}
         styles={{
           container: {
@@ -35,7 +43,7 @@ const NavTop: React.FC = () => {
           }
         }}
         query={{
-          key: 'some_google_key',
+          key: GOOGLE_API_KEY,
           language: 'en'
         }}
       />
