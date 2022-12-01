@@ -7,7 +7,7 @@ import {NavigationProp, useNavigation} from "@react-navigation/native";
 import {useAppDispatch} from "../../../store";
 import {setDestination} from "../../../store/slices/navSlice";
 import NavFavorites from "../../home-screen/NavFavorites";
-import Footer from "../Footer";
+import Footer from "./components/Footer";
 
 
 const NavigateCard: React.FC = () => {

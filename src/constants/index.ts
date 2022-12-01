@@ -1,0 +1,1 @@
+export const SURGE_CHARGE_RATE = 1.5;

@@ -2,11 +2,13 @@ import {configureStore} from "@reduxjs/toolkit";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
 import navSlice from "./slices/navSlice";
+import rideSlice from "./slices/rideSlice";
 
 
 export const store = configureStore({
   reducer: {
     nav: navSlice,
+    ride: rideSlice
   },
 });
 
