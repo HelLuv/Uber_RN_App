@@ -9,6 +9,8 @@ import {setDestination, setOrigin} from "../../../store/slices/navSlice";
 
 const NavTop: React.FC = () => {
   const dispatch = useAppDispatch();
+
+  console.log(GOOGLE_API_KEY)
   return (
     <>
       <Image
