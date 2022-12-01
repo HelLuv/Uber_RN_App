@@ -2,13 +2,17 @@ import * as React from 'react';
 import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
 import {GooglePlacesAutocomplete} from "react-native-google-places-autocomplete";
 import {GOOGLE_API_KEY} from "@env";
+import {NavigationProp, useNavigation} from "@react-navigation/native";
+
+import {useAppDispatch} from "../../../store";
+import {setDestination} from "../../../store/slices/navSlice";
+import NavFavorites from "../../home-screen/NavFavorites";
+import Footer from "../Footer";
 
 
-interface NavigateCardProps {
-
-}
-
-const NavigateCard: React.FC<NavigateCardProps> = ({}) => {
+const NavigateCard: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const navigation = useNavigation<NavigationProp<any>>();
 
   return (
     <SafeAreaView className="bg-white flex-1">
@@ -26,9 +30,20 @@ const NavigateCard: React.FC<NavigateCardProps> = ({}) => {
             key: GOOGLE_API_KEY,
             language: 'en'
           }}
-        />
+          onPress={(data, detail) => {
+            dispatch(setDestination({
+              location: detail.geometry.location,
+              description: data.description,
+            }));
 
+            navigation.navigate('RideOptionsCard')
+          }}
+        />
       </View>
+
+      <NavFavorites/>
+
+      <Footer/>
     </SafeAreaView>
   )
 };
