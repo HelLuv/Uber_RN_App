@@ -2,10 +2,10 @@ import * as React from 'react';
 import MapView, {Marker} from "react-native-maps";
 import {useEffect, useRef} from "react";
 import {GOOGLE_API_KEY, MAP_VIEW_DIRECTIONS_KEY} from "@env";
+import MapViewDirections from "react-native-maps-directions";
 
 import {useAppSelector} from "../../../store";
 import {selectDestination, selectOrigin} from "../../../store/slices/navSlice";
-import MapViewDirections from "react-native-maps-directions";
 import {useGetTravelTime} from "../../../hooks/useGetTravelTime";
 
 

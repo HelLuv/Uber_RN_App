@@ -7,12 +7,23 @@ import {useAppSelector} from "../../../store";
 import {selectTravelTimeInfo} from "../../../store/slices/navSlice";
 import RideOptionsList from "./components/RideOptionsList";
 import {selectRide} from "../../../store/slices/rideSlice";
+import {useRegisterNotification} from "../../../hooks/useRegisterNotification";
 
 
 const RideOptionsCard: React.FC = () => {
   const travelTimeInfo = useAppSelector(selectTravelTimeInfo);
   const selectedRide = useAppSelector(selectRide);
   const navigation = useNavigation<NavigationProp<any>>();
+  const {schedulePushNotification} = useRegisterNotification();
+
+  const onChooseRidePress = async () => {
+    await schedulePushNotification({
+      title: "You've got a ride!",
+      body: `Your ${selectedRide.title} will be here in 5 minutes`
+    });
+
+    navigation.navigate('NavigateCard');
+  }
 
   return (
     <SafeAreaView className="bg-white flex-grow flex-1" style={{zIndex: 1}}>
@@ -39,6 +50,8 @@ const RideOptionsCard: React.FC = () => {
         <TouchableOpacity
           disabled={!selectedRide}
           className={`bg-black py-3 m-3 ${!selectedRide && "bg-gray-300"}`}
+          activeOpacity={0.5}
+          onPress={onChooseRidePress}
         >
           <Text className="text-center text-white text-xl">
             Choose {selectedRide?.title}

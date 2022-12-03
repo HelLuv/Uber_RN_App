@@ -8,11 +8,17 @@ import {useAppDispatch} from "../../../store";
 import {setDestination} from "../../../store/slices/navSlice";
 import NavFavorites from "../../home-screen/NavFavorites";
 import Footer from "./components/Footer";
+import {useEffect} from "react";
 
 
 const NavigateCard: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigation = useNavigation<NavigationProp<any>>();
+
+  useEffect(() => {
+    dispatch(setDestination(null));
+  }, []);
+
 
   return (
     <SafeAreaView className="bg-white flex-1">
