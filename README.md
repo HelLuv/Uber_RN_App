@@ -18,6 +18,7 @@
  <img align="center" alt="React"  width="180" src="https://github.com/HelLuv/Uber_RN_App/blob/master/docs/images/home_screen_1.jpg?raw=true">
  <img align="center" alt="React"  width="180" src="https://github.com/HelLuv/Uber_RN_App/blob/master/docs/images/home_screen_2.jpg?raw=true">
  <img align="center" alt="React"  width="180" src="https://github.com/HelLuv/Uber_RN_App/blob/master/docs/images/home_screen_3.jpg?raw=true">
+<br>
  <img align="center" alt="React"  width="180" src="https://github.com/HelLuv/Uber_RN_App/blob/master/docs/images/map_screen_1.jpg?raw=true">
  <img align="center" alt="React"  width="180" src="https://github.com/HelLuv/Uber_RN_App/blob/master/docs/images/map_screen_2.jpg?raw=true">
 </div>
