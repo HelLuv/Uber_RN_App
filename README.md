@@ -1,5 +1,4 @@
-#
-<div align="center">
+<div align="center" style="padding-top: 4rem">
 
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_logo_2018.svg/1920px-Uber_logo_2018.svg.png" alt="logo" width="200" height="auto" />
 
